@@ -1,0 +1,40 @@
+A Lexical Environment in JavaScript is a data structure that stores the mapping between identifiers (variable/function names) and 
+their actual values at a specific point in the code's execution. 
+The term "lexical" refers to the fact that the structure and accessibility of variables and
+functions are determined by their physical location in the source code (where you write them), not where they are called from at runtime. 
+
+
+Each time a function is invoked, or a block of code ({}) is entered (for let and const), a new Lexical Environment is created. 
+
+This environment has two main components: 
+Environment Record: An object that stores all local variables, functions, and arguments declared within that specific scope.
+Outer Lexical Environment Reference: A pointer to the parent lexical environment, which is the scope immediately surrounding the current one in the code. 
+
+How it works: The Scope Chain
+The outer environment references form a chain, known as the scope chain. When JavaScript needs to access a variable: 
+It first looks in the current (innermost) environment's Environment Record.
+If not found, it follows the "outer reference" pointer to the parent environment and searches there.
+This process continues up the chain until the variable is found in the global scope or the top-level environment (which has a null outer reference).
+If the variable is not found anywhere in the entire chain, a ReferenceError is thrown. 
+
+
+This mechanism is fundamental to how scope and closures work in JavaScript. 
+Closures, for example, allow an inner function to access variables from its outer (parent) scope even after 
+the parent function has finished executing, because the inner function maintains a reference to the parent's lexical environment. 
+
+
+
+
+A lexical environment in JavaScript is an internal data structure that defines the scope of variables and functions based on their physical location (where they are written) in the source code. It is a theoretical construct used by the JavaScript engine to manage identifier-variable mappings and resolve variable access during code execution. 
+Key Components
+Each lexical environment consists of two main parts: 
+Environment Record: This is the actual storage space (like an object) where variable and function declarations within that specific scope are stored. It maps identifiers (variable/function names) to their actual values or references.
+Reference to the Outer Lexical Environment: Each environment maintains a reference (pointer) to its parent, or outer, lexical environment. This link is how JavaScript creates the scope chain. The global environment's outer reference is null. 
+How It Works: The Scope Chain
+When the JavaScript engine needs to access a variable, it follows a specific process: 
+It first checks the environment record of the current (innermost) lexical environment.
+If the variable is not found there, it uses the outer environment reference to look in the parent lexical environment.
+This process continues up the scope chain until the variable is found in a higher scope (eventually the global scope) or the chain ends (at the global environment's null reference), at which point a ReferenceError is thrown. 
+
+"Lexical" Means "Static"
+The term "lexical" (also known as "static") is crucial: it means that the scope and accessibility of variables are determined by where the code is written (its physical, static location in the source file), not where the function is called from at runtime. 
