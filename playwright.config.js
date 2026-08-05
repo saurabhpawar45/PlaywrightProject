@@ -28,7 +28,9 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    headless: false, // Must be false to see the physical window maximize
+  //  viewport: {width:1918,height:1030},   // Disables Playwright's default viewport sizing
+  
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
