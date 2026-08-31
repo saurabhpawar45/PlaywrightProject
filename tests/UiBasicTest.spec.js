@@ -1,6 +1,6 @@
 import { test,expect } from '@playwright/test';
 
-<<<<<<< HEAD
+
 test.use({
   viewport: 
   {height:1080,width:1920},
@@ -8,15 +8,9 @@ test.use({
     args: ['--start-maximized']
   }
 });
-test('Test Basic Playwright script',async ({page})=>
-{
-//    const context =  await browser.newContext();
-//     const page = await context.newPage();
-   await page.goto("https://www.cricbuzz.com/");
-   await page.pause();
 
-=======
-test.skip('Test Basic Playwright script',async ({page})=>
+
+test('Test Basic Playwright script',async ({page})=>
 {
 //    const context =  await browser.newContext();
 //     const page = await context.newPage();
@@ -39,6 +33,6 @@ test.skip('Test Basic Playwright script',async ({page})=>
    console.log(await cardTitles.nth(0).textContent());
    console.log(await cardTitles.first().textContent());
    console.log(await cardTitles.allTextContents())
->>>>>>> 5487fb16599f19b68ad8e59f4b545935ad8ae01d
+
 });
 

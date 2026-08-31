@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {},
   "keywords": [],
+  "type": "module",
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.58.0",
     "@types/node": "^25.0.10"
+  },
+  "dependencies": {
+    "typescript": "^7.0.2"
   }
 }
